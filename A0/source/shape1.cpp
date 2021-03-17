@@ -19,34 +19,8 @@ struct rot_state {
 /* Global variables */
 char title[] = "3D Shapes";
  
-/* Initialize OpenGL Graphics */
-void initGL() {
-   app_state.rotating = false;
-   app_state.x = app_state.y = app_state.z = 0.0f;
-   app_state.current_axis = -1;
-   app_state.camx = app_state.camy = app_state.camz = 0.5f;
-   app_state.movex = app_state.movey =app_state.movez = 0.0f;
-   app_state.spin_around_object = false;
-   app_state.angle = 0.0f;
-
-   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
-   glClearDepth(1.0f);                   // Set background depth to farthest
-   glEnable(GL_DEPTH_TEST);   // Enable depth testing for z-culling
-   glDepthFunc(GL_LEQUAL);    // Set the type of depth-test
-   glShadeModel(GL_SMOOTH);   // Enable smooth shading
-   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // Nice perspective corrections
-}
- 
-/* Handler for window-repaint event. Called back when the window first appears and
-   whenever the window needs to be re-painted. */
-
-
 void display() {
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear color and depth buffers
-   // glMatrixMode(GL_MODELVIEW);     // To operate on model-view matrix
- 
-   // // Render a color-cube consisting of 6 quads with different colors
-   // glLoadIdentity();                 // Reset the model-view matrix
    glPushMatrix();
    glTranslatef(0.0f, 0.0f, -7.0f);  // Move right and into the screen
    float a = 1, h = 1.5f, s30 = 0.5f, c30 = sqrt(3)/2;
@@ -214,9 +188,7 @@ void display() {
         
 
    glEnd();  // End of drawing color-cube
-   // glLoadIdentity();                  // Reset the model-view matrix
    glTranslatef(-1.5f, 0.0f, -6.0f);  // Move left and into the screen
-   // glutSwapBuffers();  // Swap the front and back frame buffers (double buffering)
    glPopMatrix();
     glutSwapBuffers();
     glFlush();
@@ -225,17 +197,11 @@ void display() {
 /* Handler for window re-size event. Called back when the window first appears and
    whenever the window is re-sized with its new width and height */
 void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integer
-   // Compute aspect ratio of the new window
    if (height == 0) height = 1;                // To prevent divide by 0
    GLfloat aspect = (GLfloat)width / (GLfloat)height;
- 
-   // Set the viewport to cover the new window
    glViewport(0, 0, width, height);
- 
-   // Set the aspect ratio of the clipping volume to match the viewport
    glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
    glLoadIdentity();             // Reset
-   // Enable perspective projection with fovy, aspect, zNear and zFar
    gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
@@ -326,7 +292,7 @@ void keyboard(unsigned char key, int x, int y)
     case 'g':
       app_state.camz -= 1;
       break;
-   //move to pre-decided poistions of camera
+   //move to pre-decided poistions of camera st it faces object
     case 'd':
       app_state.camx = 1;
       app_state.camy = 1;
@@ -354,7 +320,6 @@ void keyboard(unsigned char key, int x, int y)
     glutPostRedisplay();
 }
 
-/* Main function: GLUT runs as a console application starting at main() */
 int main(int argc, char** argv) {
    glutInit(&argc, argv);            // Initialize GLUT
    glutInitDisplayMode(GLUT_DOUBLE); // Enable double buffered mode
@@ -363,7 +328,22 @@ int main(int argc, char** argv) {
    glutCreateWindow(title);          // Create window with the given title
    glutDisplayFunc(display);       // Register callback handler for window re-paint event
    glutReshapeFunc(reshape);       // Register callback handler for window re-size event
-   initGL();                       // Our own OpenGL initialization
+
+   app_state.rotating = false;
+   app_state.x = app_state.y = app_state.z = 0.0f;
+   app_state.current_axis = -1;
+   app_state.camx = app_state.camy = app_state.camz = 0.5f;
+   app_state.movex = app_state.movey =app_state.movez = 0.0f;
+   app_state.spin_around_object = false;
+   app_state.angle = 0.0f;
+
+   glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
+   glClearDepth(1.0f);                   // Set background depth to farthest
+   glEnable(GL_DEPTH_TEST);   // Enable depth testing for z-culling
+   glDepthFunc(GL_LEQUAL);    // Set the type of depth-test
+   glShadeModel(GL_SMOOTH);   // Enable smooth shading
+   glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // Nice perspective corrections
+    // Our own OpenGL initialization
    glutKeyboardFunc(keyboard);
    glutIdleFunc(action);
    glutMainLoop();                 // Enter the infinite event-processing loop
