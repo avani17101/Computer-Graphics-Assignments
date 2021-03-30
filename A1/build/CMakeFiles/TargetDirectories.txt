@@ -1,0 +1,9 @@
+/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/rebuild_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/edit_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/glad.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/Hello-World.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/libraries/glfw/CMakeFiles/rebuild_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/libraries/glfw/CMakeFiles/edit_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/libraries/glfw/src/CMakeFiles/rebuild_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/libraries/glfw/src/CMakeFiles/edit_cache.dir
+/home/avani/Computer-Graphics-Assignments/A1/build/libraries/glfw/src/CMakeFiles/glfw.dir
