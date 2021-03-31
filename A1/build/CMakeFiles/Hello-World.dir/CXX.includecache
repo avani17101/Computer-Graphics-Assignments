@@ -87,6 +87,8 @@ goal.h
 /home/avani/Computer-Graphics-Assignments/A1/src/goal.h
 lives.h
 /home/avani/Computer-Graphics-Assignments/A1/src/lives.h
+treasure.h
+/home/avani/Computer-Graphics-Assignments/A1/src/treasure.h
 scoreboard.h
 /home/avani/Computer-Graphics-Assignments/A1/src/scoreboard.h
 bits/stdc++.h
@@ -131,4 +133,8 @@ main.h
 /home/avani/Computer-Graphics-Assignments/A1/src/main.h
 
 /home/avani/Computer-Graphics-Assignments/A1/src/timer.h
+
+/home/avani/Computer-Graphics-Assignments/A1/src/treasure.h
+main.h
+/home/avani/Computer-Graphics-Assignments/A1/src/main.h
 

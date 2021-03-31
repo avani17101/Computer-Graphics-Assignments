@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/avani/Computer-Graphics-Assignments/A1/src/player.cpp" "/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/Hello-World.dir/src/player.cpp.o"
   "/home/avani/Computer-Graphics-Assignments/A1/src/scoreboard.cpp" "/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/Hello-World.dir/src/scoreboard.cpp.o"
   "/home/avani/Computer-Graphics-Assignments/A1/src/timer.cpp" "/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/Hello-World.dir/src/timer.cpp.o"
+  "/home/avani/Computer-Graphics-Assignments/A1/src/treasure.cpp" "/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles/Hello-World.dir/src/treasure.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

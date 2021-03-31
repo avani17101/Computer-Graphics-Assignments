@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hello-World.dir/src/player.cpp.o"
   "CMakeFiles/Hello-World.dir/src/scoreboard.cpp.o"
   "CMakeFiles/Hello-World.dir/src/timer.cpp.o"
+  "CMakeFiles/Hello-World.dir/src/treasure.cpp.o"
   "Hello-World"
   "Hello-World.pdb"
 )

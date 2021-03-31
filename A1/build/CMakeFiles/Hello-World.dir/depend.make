@@ -51,6 +51,7 @@ CMakeFiles/Hello-World.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/Hello-World.dir/src/main.cpp.o: ../src/player.h
 CMakeFiles/Hello-World.dir/src/main.cpp.o: ../src/scoreboard.h
 CMakeFiles/Hello-World.dir/src/main.cpp.o: ../src/timer.h
+CMakeFiles/Hello-World.dir/src/main.cpp.o: ../src/treasure.h
 
 CMakeFiles/Hello-World.dir/src/nonedit.cpp.o: ../libraries/glfw/include/GLFW/glfw3.h
 CMakeFiles/Hello-World.dir/src/nonedit.cpp.o: ../src/main.h
@@ -73,4 +74,9 @@ CMakeFiles/Hello-World.dir/src/scoreboard.cpp.o: ../src/scoreboard.h
 CMakeFiles/Hello-World.dir/src/timer.cpp.o: ../libraries/glfw/include/GLFW/glfw3.h
 CMakeFiles/Hello-World.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/Hello-World.dir/src/timer.cpp.o: ../src/timer.h
+
+CMakeFiles/Hello-World.dir/src/treasure.cpp.o: ../libraries/glfw/include/GLFW/glfw3.h
+CMakeFiles/Hello-World.dir/src/treasure.cpp.o: ../src/main.h
+CMakeFiles/Hello-World.dir/src/treasure.cpp.o: ../src/treasure.cpp
+CMakeFiles/Hello-World.dir/src/treasure.cpp.o: ../src/treasure.h
 

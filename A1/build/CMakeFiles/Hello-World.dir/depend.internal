@@ -52,6 +52,7 @@ CMakeFiles/Hello-World.dir/src/main.cpp.o
  /home/avani/Computer-Graphics-Assignments/A1/src/player.h
  /home/avani/Computer-Graphics-Assignments/A1/src/scoreboard.h
  /home/avani/Computer-Graphics-Assignments/A1/src/timer.h
+ /home/avani/Computer-Graphics-Assignments/A1/src/treasure.h
 CMakeFiles/Hello-World.dir/src/nonedit.cpp.o
  ../libraries/glfw/include/GLFW/glfw3.h
  /home/avani/Computer-Graphics-Assignments/A1/src/main.h
@@ -74,3 +75,8 @@ CMakeFiles/Hello-World.dir/src/timer.cpp.o
  ../libraries/glfw/include/GLFW/glfw3.h
  /home/avani/Computer-Graphics-Assignments/A1/src/timer.cpp
  /home/avani/Computer-Graphics-Assignments/A1/src/timer.h
+CMakeFiles/Hello-World.dir/src/treasure.cpp.o
+ ../libraries/glfw/include/GLFW/glfw3.h
+ /home/avani/Computer-Graphics-Assignments/A1/src/main.h
+ /home/avani/Computer-Graphics-Assignments/A1/src/treasure.cpp
+ /home/avani/Computer-Graphics-Assignments/A1/src/treasure.h

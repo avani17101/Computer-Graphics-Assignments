@@ -554,6 +554,33 @@ src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
+src/treasure.o: src/treasure.cpp.o
+
+.PHONY : src/treasure.o
+
+# target to build an object file
+src/treasure.cpp.o:
+	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/src/treasure.cpp.o
+.PHONY : src/treasure.cpp.o
+
+src/treasure.i: src/treasure.cpp.i
+
+.PHONY : src/treasure.i
+
+# target to preprocess a source file
+src/treasure.cpp.i:
+	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/src/treasure.cpp.i
+.PHONY : src/treasure.cpp.i
+
+src/treasure.s: src/treasure.cpp.s
+
+.PHONY : src/treasure.s
+
+# target to generate assembly for a file
+src/treasure.cpp.s:
+	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/src/treasure.cpp.s
+.PHONY : src/treasure.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -610,6 +637,9 @@ help:
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/treasure.o"
+	@echo "... src/treasure.i"
+	@echo "... src/treasure.s"
 .PHONY : help
 
 
