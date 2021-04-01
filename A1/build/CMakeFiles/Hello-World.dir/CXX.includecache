@@ -70,6 +70,12 @@ main.h
 main.h
 /home/avani/Computer-Graphics-Assignments/A1/src/main.h
 
+/home/avani/Computer-Graphics-Assignments/A1/src/lives.cpp
+lives.h
+/home/avani/Computer-Graphics-Assignments/A1/src/lives.h
+main.h
+/home/avani/Computer-Graphics-Assignments/A1/src/main.h
+
 /home/avani/Computer-Graphics-Assignments/A1/src/lives.h
 main.h
 /home/avani/Computer-Graphics-Assignments/A1/src/main.h
@@ -125,6 +131,14 @@ glm/gtc/matrix_transform.hpp
 -
 
 /home/avani/Computer-Graphics-Assignments/A1/src/player.h
+main.h
+/home/avani/Computer-Graphics-Assignments/A1/src/main.h
+
+/home/avani/Computer-Graphics-Assignments/A1/src/scoreboard.cpp
+scoreboard.h
+/home/avani/Computer-Graphics-Assignments/A1/src/scoreboard.h
+bits/stdc++.h
+/home/avani/Computer-Graphics-Assignments/A1/src/bits/stdc++.h
 main.h
 /home/avani/Computer-Graphics-Assignments/A1/src/main.h
 
