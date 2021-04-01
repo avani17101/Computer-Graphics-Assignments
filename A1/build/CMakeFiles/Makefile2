@@ -138,8 +138,8 @@ CMakeFiles/glad.dir/clean:
 # Target rules for target CMakeFiles/Hello-World.dir
 
 # All Build rule for target.
-CMakeFiles/Hello-World.dir/all: CMakeFiles/glad.dir/all
 CMakeFiles/Hello-World.dir/all: libraries/glfw/src/CMakeFiles/glfw.dir/all
+CMakeFiles/Hello-World.dir/all: CMakeFiles/glad.dir/all
 	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/depend
 	$(MAKE) -f CMakeFiles/Hello-World.dir/build.make CMakeFiles/Hello-World.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/avani/Computer-Graphics-Assignments/A1/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target Hello-World"
