@@ -16,7 +16,7 @@ glm::mat4 VP;
 
 using namespace std;
 int hh=0;
-int score = 0, lives = 0, range = 10, WIN = 0,CRASH = 0, LOSE = 0 , N, unlock_obstacles=0;
+int score = 0, lives = 0, range = 10, WIN = 0,CRASH = 0, LOSE = 0 , N, unlock_obstacles=0, status= -1;
 Scoreboard sc;
 const int st_x = 0, st_y = 0,  min_x = -10, max_x = 10, max_y = 10,  min_y = -10, MAXN = 1e6 + 5;
 int difficulty = 2;
@@ -324,15 +324,17 @@ void check_collision()
     if((player.position.y == enemy.position.y ) || range == 0){
         lives--;
         if(lives < 0){
-            cout << "OOPS :( You lose! \n";
+            // cout << "OOPS :( You lose! \n";
             CRASH = 1;
             LOSE = 1;
+            status = 0;
         }
         else{
         
             if(range != 0) score=score-50;
             else range=8;
             CRASH = 1;
+            
         }
     }
     }
@@ -377,7 +379,7 @@ void check_collision()
                     
                     batteries.push_back(Battery(arr_x[i], arr_y[j], COLOR_WHITE, "assets/battery.bmp"));
                     hearts.push_back(Lives(arr2_x[i], arr2_y[i], COLOR_MAGENTA, ""));
-                    fires.push_back(Fire(arr3_x[i], arr3_y[j], COLOR_WOOD, "assets/fire.bmp"));
+                    fires.push_back(Fire(arr3_x[i], arr3_y[j], COLOR_WOOD, "assets/fire3.bmp"));
 
                 }
             
@@ -388,7 +390,7 @@ void check_collision()
 
     if( lives_collected >=2 && powerups_collected>=2 && task2_complete==0)
     {
-        cout<< "Task 2 complete! \n";
+        // cout<< "Task 2 complete! \n";
         task2_complete = 1;
         tasks_completed += 1;
 
@@ -396,9 +398,10 @@ void check_collision()
     
     if(kill_task == 1 && lives_collected>=2 && powerups_collected>=2)
     {
-        cout<< "Both tasks Completed. \n";
-        cout<< "Congratulations, You Won! \n";
+        // cout<< "Both tasks Completed. \n";
+        // cout<< "Congratulations, You Won! \n";
         WIN = 1;
+        status = 1;
     }
     
 }
@@ -771,6 +774,7 @@ void tick_elements() {
     sc.light = light;
     sc.tasks_completed = tasks_completed;
     sc.range = range;
+    sc.status = status;
     sc.screen_y = eye.y;
     sc.offset = offset;
     sc.max_range = 2 * max(max_x - min_x, max_y - min_y);
@@ -995,13 +999,22 @@ int main(int argc, char **argv) {
         // Poll for Keyboard and mouse events
         glfwPollEvents();
 
-        if(WIN)
-            quit(window);
-        else hh=hh+1;
+        // if(WIN)
+        // {
+        //     quit(window);
+        // }
+        // if(status==1 || status==0) quit(window);
+            
+     
         if(CRASH)
         {
-            if(LOSE) quit(window);
-            else{
+            // if(status == 0) 
+            // {  
+            //     // cout<< "press esc to exit";
+            //     //quit(window);
+            // }
+            
+            if(status!=0){
                 enemy.position.y = max_y;
                 CRASH = 0;
                 hh=hh+1;

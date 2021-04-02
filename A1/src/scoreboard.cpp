@@ -9,6 +9,7 @@ Scoreboard::Scoreboard(float x, float y, color_t color, string textureFile) {
     this->direction = 0;
     this->score = 0;
     this->lives = 0;
+    this-> status = -1;
     this -> tasks_completed = 0;
     speed = 1;
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
@@ -146,45 +147,52 @@ void Scoreboard::draw(glm::mat4 VP) {
             glm::mat4 MVP = VP * Matrices.model;
             glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
             string file;
-            switch(digit)
+            if(this->status == -1)
             {
-                case 0:
-                    file = "assets/0.bmp";
-                    break;
-                case 1:
-                    file = "assets/1.bmp";
-                    break;
-                case 2:
-                    file = "assets/2.bmp";
-                    break;
-                case 3:
-                    file = "assets/3.bmp";
-                    break;
-                case 4:
-                    file = "assets/4.bmp";
-                    break;
-                case 5:
-                    file = "assets/5.bmp";
-                    break;
-                case 6:
-                    file = "assets/6.bmp";
-                    break;
-                case 7:
-                    file = "assets/7.bmp";
-                    break;
-                case 8:
-                    file = "assets/8.bmp";
-                    break;
-                case 9:
-                    file = "assets/9.bmp";
-                    break;
+                switch(digit)
+                {
+                    case 0:
+                        file = "assets/0.bmp";
+                        break;
+                    case 1:
+                        file = "assets/1.bmp";
+                        break;
+                    case 2:
+                        file = "assets/2.bmp";
+                        break;
+                    case 3:
+                        file = "assets/3.bmp";
+                        break;
+                    case 4:
+                        file = "assets/4.bmp";
+                        break;
+                    case 5:
+                        file = "assets/5.bmp";
+                        break;
+                    case 6:
+                        file = "assets/6.bmp";
+                        break;
+                    case 7:
+                        file = "assets/7.bmp";
+                        break;
+                    case 8:
+                        file = "assets/8.bmp";
+                        break;
+                    case 9:
+                        file = "assets/9.bmp";
+                        break;
+
+                }
 
             }
+            
+            if(this -> status == 0) file = "assets/loose.bmp";
+            if(this -> status == 1) file = "assets/win.bmp";
             
             VAO* obj = create3DObject(GL_TRIANGLES, 2 * 3, vertex_buffer_data, uv_buffer_data, COLOR_GREEN, GL_FILL, file);
             draw3DObject(obj);
         }
-        if(this->score < 0){
+        if(this->score < 0 && this->status==-1){
             count++;
             static GLfloat vertex_buffer_data[] = {
                 0.0f, 0.0f, 0.0f,
@@ -216,7 +224,7 @@ void Scoreboard::draw(glm::mat4 VP) {
         }
        
     }
-    else{
+    else if(this->status!=-1){
          static GLfloat uv_buffer_data[] = {
             0.0f, 1.0f,
             1.0f, 1.0f,

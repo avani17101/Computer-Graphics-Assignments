@@ -9,7 +9,7 @@ public:
     Scoreboard() {}
     Scoreboard(float x, float y, color_t color, string textureFile);
     glm::vec3 position;
-    int score, screen_x, screen_y, lives, range, max_range, tasks_completed, light;
+    int score, screen_x, screen_y, lives, range, max_range, tasks_completed, light, status;
     double speed;
     float rotation, direction, offset;
     

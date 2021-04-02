@@ -4,10 +4,16 @@
 Fire::Fire(float x, float y, color_t color, string textureFile) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
-  
-    this->Texture = loadBMP_custom("assets/fire.bmp");
-
+    this->images = 3;
     speed = 1;
+    this->count = rand() % this->images;
+    this->curr = 0;
+    // load images
+    for(int i = 1; i <= this->images; ++i){
+        string f = "assets/fire" + to_string(i) + ".bmp";
+        this->Texture[i - 1] = loadBMP_custom(&f[0]);
+    }
+   
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
      static const GLfloat uv_buffer_data[] = {
@@ -39,7 +45,7 @@ void Fire::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    drawPlayer(this->object, this->Texture);
+    drawPlayer(this->object, this->Texture[this->count]);
 }
 
 void Fire::set_position(float x, float y) {
@@ -51,5 +57,11 @@ void Fire::tick() {
     // this->rotation += speed;
     // this->position.x -= speed;
     // this->position.y -= speed;
+    this->curr += 1;
+    if(this->curr == 3){
+        this->count += 1;
+        this->count = this->count % this->images;
+        this->curr = 0;
+    }
 }
 
