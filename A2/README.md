@@ -1,13 +1,11 @@
 # SkyWarN Game
-
-* Roll: 2019121004
-* Name: Avani Gupta
-
-## Plot
 Your Friend Nata has been trapped in by enemies. You are out there on the mission to rescue him. 
 Fight the enemy and rescue Nata.
 
-## Trailer video: https://youtu.be/0tGeqDiBk9k
+
+[Trailer video](https://youtu.be/0tGeqDiBk9k) <br>
+[Game live](https://skywarn.herokuapp.com/)
+
 
 ## Running the game
 * Best in chrome, cd src, open index.html in your web browser.
@@ -22,6 +20,11 @@ Fight the enemy and rescue Nata.
  * up arrow key for up movement, down arrow key for down.
  * Space for fire.
 
+## Frameworks used
+* Javascript
+* ThreeJS
+* HTML
+* Blender(for making models used in game and making trailer)
 
 
 
