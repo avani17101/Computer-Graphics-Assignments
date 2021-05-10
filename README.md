@@ -13,5 +13,5 @@ Done as part of Computer Graphics course assignments(spring 2021) at IIIT Hydera
 
 ### A2: Browser Game
 * SkyWarN browser game built with threeJS. You need to fight the enemy to rescue Nato.
-Play the game deployed [here!](https://skywarn.herokuapp.com/)
+* Play the game deployed [here!](https://skywarn.herokuapp.com/)
 * Built using ThreeJS and Blender
